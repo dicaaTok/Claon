@@ -7,23 +7,23 @@ class CounterDataSource {
     private var countDto = CountDto()
     private var count = 0
 
-    fun increment() {
+    fun increment(){
         countDto = CountDto(
-        count = count++,
-        isIncrement = true,
+            count = count++,
+            isIncrement = true,
         )
     }
 
-    fun decrement() {
+    fun decrement(){
         countDto = CountDto(
             count = count--,
             isIncrement = false,
         )
     }
-
     fun getCount() = countDto
+
+}
   //  fun getCount() = count
     //fun getCount(): Int {
 // return count
 // }
-}
