@@ -1,21 +1,21 @@
 package com.dica.claon.data.datasource
 
-import com.dica.claon.data.model.CountDto
+import com.dica.claon.data.model.CharacterDto
 
 class CounterDataSource {
 
-    private var countDto = CountDto()
+    private var countDto = CharacterDto()
     private var count = 0
 
     fun increment(){
-        countDto = CountDto(
+        countDto = CharacterDto(
             count = count++,
             isIncrement = true,
         )
     }
 
     fun decrement(){
-        countDto = CountDto(
+        countDto = CharacterDto(
             count = count--,
             isIncrement = false,
         )

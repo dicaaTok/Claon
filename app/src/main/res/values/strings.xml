@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Claon</string>
+    <string name="app_name">M5Lesson</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_seen_in">First seen in:</string>
+    <string name="name">NAME</string>
+    <string name="dead_human">Dead-Human</string>
+    <string name="last_known_location">Last known location:</string>
+    <string name="descritpion">Description</string>
+    <string name="text">Text</string>
 </resources>

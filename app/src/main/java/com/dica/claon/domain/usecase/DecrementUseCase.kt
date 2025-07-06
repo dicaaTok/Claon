@@ -1,15 +1,13 @@
 package com.dica.claon.domain.usecase
 
+import com.dica.claon.domain.model.Count
 import com.dica.claon.domain.repository.CounterRepository
 
-class DecrementUseCase (
-
+class GetCountUseCase (
     private val repository: CounterRepository
+) {
 
-){
-
-    fun decrement(){
-        repository.decrement()
+    fun getCount(): Count {
+        return repository.getCount()
     }
-
 }

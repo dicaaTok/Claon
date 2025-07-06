@@ -1,31 +1,45 @@
 package com.dica.claon
 
+fun main(){
+    val engine = Engine()
+    val electricEngine = ElectricEngine()
+    val gasEngine = GasEngine()
 
-fun  main() {
-val engine = Engine()
-    val car = Car()
-    car.setEngine(engine)
+    val car= Car(gasEngine )
+    val car2= Car(electricEngine )
+    val car3= Car(engine )
+
     car.start()
-
+    car2.start()
+    car3.start()
 }
-open class Car (
 
+class Car(
+
+    private val engine: Engine
 ){
-    private val engine: Engine? = null
-    fun setEngine(engine: Engine){
-        _engine = engine
-    }
 
-    fun start() {
-        _engine?.startEngine()
+    fun start(){
+        engine.startEngine()
+        println("Машина заведена")
     }
 }
-//class ElectricCar: Car(){}
 
-class Engine() {
-
-    fun startEngine() {
-        println("Engine started")
+open class Engine{
+    open fun startEngine(){
+        println("Двигатель запущен")
     }
+}
 
+class ElectricEngine: Engine(){
+    override fun startEngine() {
+        println("Электронная машина заведена")
+
+    }
+}
+
+class GasEngine: Engine(){
+    override fun startEngine() {
+        println("Газовая машина  заведена")
+    }
 }
