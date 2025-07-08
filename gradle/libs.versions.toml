@@ -1,3 +1,4 @@
+[versions]
 agp = "8.7.3"
 koinAndroid = "3.5.0"
 kotlin = "2.1.0"
@@ -30,3 +31,4 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndr
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
