@@ -9,20 +9,24 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
 class CharacterRepositoryImpl(
-    private val api: ApiService
+    private val api: CharacterApi
 ) : CharacterRepository {
 
-    override  fun getCharacters(): Flow<List<CharacterDto>>
-    {
-        return flow {
-            try {
-                val response = api.getCharacters()
-                if (response.results.isNotEmpty() ==true) {
-                    emit(response.results)
-                }
-            }catch (e: Exception){
-                e.printStackTrace()
-            }
-        }.flowOn(Dispatchers.IO)
+    override fun getAllCharacters(): Flow<Either<Failure, List<Character>>> = flow {
+        try {
+            val response = api.getCharacters()
+            emit(Either.Right(response.map { it.toDomain() }))
+        } catch (e: Exception) {
+            emit(Either.Left(Failure.ServerError))
+        }
+    }
+
+    override fun getCharacterById(id: Int): Flow<Either<Failure, Character>> = flow {
+        try {
+            val response = api.getCharacterById(id)
+            emit(Either.Right(response.toDomain()))
+        } catch (e: Exception) {
+            emit(Either.Left(Failure.ServerError))
+        }
     }
 }
