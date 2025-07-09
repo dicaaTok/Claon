@@ -9,4 +9,5 @@ interface CounterRepository {
     fun decrement()
 
     fun getCount(): Count
+
 }
