@@ -60,4 +60,8 @@ dependencies {
     //    NavGraph
     implementation ("androidx.navigation:navigation-fragment:$nav_version")
     implementation (libs.androidx.navigation.ui)
+
+    implementation ("org.koin:koin-androidx-viewmodel:3.5.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 }
